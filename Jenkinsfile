@@ -12,7 +12,7 @@ pipeline {
 				steps {
 					script {
 						def imageName = 'pravinraj:latest'
-						sudo sh "docker build -t ${imageName} . "
+						sh "docker build -t ${imageName} . "
 					}
 				}
 			}
@@ -20,7 +20,7 @@ pipeline {
 				steps {
 					script {
 						def imageName = 'pravinraj:latest'
-						sudo sh "docker push ${imageName} "
+						sh "docker push ${imageName} "
 					}
 				}
 			}
