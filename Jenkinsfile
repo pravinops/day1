@@ -5,10 +5,10 @@ pipeline {
 			stage('checkout') {
 				steps {
 					        git branch: 'main', // Specify the 'main' branch to checkout
-          url: 'https://github.com/pravinops/day1.git
+          url: 'https://github.com/pravinops/day1.git'
 				}
 			}
-			stage ('Build Dockerr image') {
+			stage ('Build Docker image') {
 				steps {
 					script {
 						def imageName = 'pravinraj:latest'
