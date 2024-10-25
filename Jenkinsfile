@@ -1,12 +1,35 @@
 pipeline {
-    agent {
-        docker { image 'node:20.18.0-alpine3.20' }
-    }
-    stages {
-        stage('Testinigg') {
-            steps {
-                sh 'node --version'
-            }
-        }
-    }
-}
+	agent any
+	
+		stages{
+			stage('checkout') {
+				steps {
+					git 'https://github.com/pravinops/day1.git'
+				}
+			}
+			stage ('Build Docker image') {
+				steps {
+					scripts {
+						def imageName = 'pravin:latest'
+						sh "docker build -t ${imageName} . "
+					}
+				}
+			}
+			stage ('Push Docker Image') {
+				steps {
+					scripts {
+						def imageName = 'pravin:latest'
+						sh "docker push ${imageName} "
+					}
+				}
+			}
+		}
+		post {
+			success {
+				echo "success"
+			}
+			failure {
+				echo "problem"
+			}
+		}
+	}
