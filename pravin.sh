@@ -1,6 +1,6 @@
 echo "hi pravin raj how are you?????????/"
-echo "gm how"
-sunil
+echo "gm hoo "
+echo "sunil"
 echo "sunil"
 echo "hi"
 echo "ashiwbn"
