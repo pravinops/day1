@@ -4,7 +4,8 @@ pipeline {
 		stages{
 			stage('checkout') {
 				steps {
-					git 'https://github.com/pravinops/day1.git'
+					        git branch: 'main', // Specify the 'main' branch to checkout
+          url: 'https://github.com/pravinops/day1.git'
 				}
 			}
 			stage ('Build Docker image') {
