@@ -9,7 +9,7 @@ pipeline {
 			}
 			stage ('Build Docker image') {
 				steps {
-					scripts {
+					script {
 						def imageName = 'pravinraj:latest'
 						sh "docker build -t ${imageName} . "
 					}
@@ -17,7 +17,7 @@ pipeline {
 			}
 			stage ('Push Docker Image') {
 				steps {
-					scripts {
+					script {
 						def imageName = 'pravinraj:latest'
 						sh "docker push ${imageName} "
 					}
